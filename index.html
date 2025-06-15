@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rate Limiter - Frontend com WebSocket</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <h1>Rate Limiter</h1>
+    <div id="container">
+
+        <div id="buttons">
+            <button class="route-btn" data-url="http://localhost:8080/unlimited">/unlimited <span class="status">Sem
+                    limite</span></button>
+            <button class="route-btn" data-url="http://localhost:8080/limited">/limited <span class="status">Token
+                    Bucket: 5 req/s</span></button>
+            <button class="route-btn" data-url="http://localhost:8080/fixed">/fixed <span class="status">Janela Fixa: 10
+                    req/min</span></button>
+            <button class="route-btn" data-url="http://localhost:8080/log">/log <span class="status">Janela Deslizante
+                    (log): 3 req/10s</span></button>
+            <button class="route-btn" data-url="http://localhost:8080/sliding">/sliding <span class="status">Janela
+                    Deslizante (contador): 4 req/30s</span></button>
+            <button class="route-btn" data-url="http://localhost:8080/redis">/redis <span class="status">Redis Rate
+                    Limit: 20 req/min por IP</span></button>
+        </div>
+
+
+        <div id="log" aria-live="polite" aria-label="Log de mensagens WebSocket"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
